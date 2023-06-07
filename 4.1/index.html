@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // <p id="demo"></p>;
+
+      let str = "abcdefghijklmnopqrstuv";
+      alert(
+        str[1] +
+          "-2-" +
+          str[2] +
+          "-2" +
+          str[3] +
+          "-2 " +
+          str[4] +
+          "-2 " +
+          str[5] +
+          "-2-" +
+          str[6] +
+          "-2 " +
+          str[7] +
+          "-2 "
+      );
+
+      let num = "020304060715";
+      let num1 = num.slice(0, 3);
+      let num2 = num.slice(3, 6);
+      let num3 = num.slice(6, 9);
+      let num4 = num.slice(9, 12);
+
+      let num11 = Number(num1);
+      let num22 = Number(num2);
+      let num33 = Number(num3);
+      let num44 = Number(num4);
+
+      let first = num11 * num22 - Math.pow(num33, 2);
+      let second = (2 * num44) / (num11 + num22 / 4);
+      alert(first);
+      alert(second);
+
+      // document.getElementById("demo") = str;
+
+      let answer = confirm("Вы хотите вычислить значение?");
+      let result = 0;
+
+      function calculate(choice) {
+        if (choice === "y") {
+          result = num11 * num22 - Math.pow(num33, 2);
+        } else {
+          result = (2 * num44) / (num11 + num22 / 4);
+        }
+        document.writeln("Результат: " + result);
+      }
+
+      if (answer) {
+        calculate("y");
+      } else {
+        calculate("f");
+      }
+    </script>
+  </body>
+</html>
