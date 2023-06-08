@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="line"></div>
+    <p id="demo"></p>
+
+    <h1>Анкета</h1>
+    <form>
+      <p><strong>Выберите курс:</strong></p>
+      <p>
+        <input type="radio" name="course" value="first" checked /> Первый курс
+        2200 шекелей
+      </p>
+      <p>
+        <input type="radio" name="course" value="second" /> Второй курс 440
+        шекелей.
+      </p>
+      <p>
+        <input type="radio" name="course" value="third" /> Третий курс (100
+        шекелей.)
+      </p>
+
+      <p><strong>Выберите язык общения с преподавателем:</strong></p>
+      <select name="lang">
+        <option value="ru">Русский</option>
+        <option value="en">Английский</option>
+        <option value="uk">Украинский</option>
+      </select>
+
+      <p><strong>Выберите форму образования:</strong></p>
+      <p>
+        <input type="radio" name="education" value="full-time" checked /> Очная
+        форма обучения
+      </p>
+      <p>
+        <input type="radio" name="education" value="part-time" /> Заочная форма
+        обучения (75% стоимости)
+      </p>
+      <p>
+        <input type="radio" name="education" value="distance" /> Дистанционная
+        форма обучения (50% стоимости)
+      </p>
+
+      <button type="button" onclick="calculatePrice()">
+        Рассчитать стоимость
+      </button>
+    </form>
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+      let line = document.getElementById("line");
+
+      line.style.width = "72%";
+      line.style.height = "3px";
+
+      let man = ["10.02.1999", "Мужской", "кладовщик"];
+      document.getElementById("demo").innerHTML = man;
+
+      function calculatePrice() {
+        let course = document.querySelector(
+          'input[name="course"]:checked'
+        ).value;
+        let lang = document.querySelector('select[name="lang"]').value;
+        let education = document.querySelector(
+          'input[name="education"]:checked'
+        ).value;
+
+        let coursePrice = 0;
+        switch (course) {
+          case "first":
+            coursePrice += 2200;
+            break;
+          case "second":
+            coursePrice += 440;
+            break;
+          case "third":
+            coursePrice += 100;
+            break;
+        }
+
+        let totalPrice = coursePrice;
+        if (education == "part-time") {
+          totalPrice *= 0.75;
+        } else if (education == "distance") {
+          totalPrice *= 0.5;
+        }
+
+        // рез
+        let result = document.querySelector("#result");
+        result.innerHTML +=
+          "Полная стоимость обучения: " + totalPrice + " руб.\n";
+      }
+    </script>
+  </body>
+</html>
