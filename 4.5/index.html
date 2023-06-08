@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let R = [1, 2, 3, 4];
+      R.unshift(1, 2, 3);
+      R.push("jlb", "ljb");
+      alert(R);
+
+      let arr = [];
+      for (let i = 0; i < 5; i++) {
+        arr[i] = [];
+        for (let j = 0; j < 8; j++) {
+          arr[i][j] = Math.floor(Math.random() * 50);
+        }
+      }
+      alert(arr);
+
+      let array = [
+        [2, "wc", "sDC", "SDC", 3,],
+        ["fadff", 8, 4, "faffff", 9,],
+        [7, "ddddddd",657, "yr", "hrt",],
+        ["rh", 55, 12, "yfgn", "12",],
+        ["strjng", "fdhf", 63, "erdfh", 7,],
+        ["cn ", 7, 5, "afngff", 54, ],
+      ];
+
+      for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+          if (typeof array[i][j] === "number") {
+            array[i][j] = array[i][j].toString();
+          }
+        }
+      }
+      alert(array.reverse());
+
+      let massiv = [];
+      for (let i = 0; i < 7; i++) {
+        massiv[i] = [];
+        for (let j = 0; j < 6; j++) {
+            massiv[i][j] = `(${i},${j})`;
+        }
+      }
+      massiv.unshift([
+        "rjhh",
+        "thdfgbdb",
+        "tzfng",
+        "eRhfbd;",
+        "ztrngf",
+        "zegh",
+      ]);
+      massiv.unshift(["erhb", "wesbd", "svc", "mi", "qws", "myh"]);
+      massiv.unshift(["sdv", "zmngh", "ryxfng", "srynfgd", "rxfng", "tym"]);
+      massiv.unshift(["sdv", "zmngh", "ryxfng", "srynfgd", "rxfng", "tym"]);
+      massiv.unshift(["sdv", "zmngh", "ryxfng", "srynfgd", "rxfng", "tym"]);
+      massiv.pop();
+      massiv.pop();
+      massiv.pop();
+      alert(massiv);
+    </script>
+  </body>
+</html>
