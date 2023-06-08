@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 id="h1" onmouseover="changeStyle()" onmouseout="changeStyleBack()">
+      привет
+    </h1>
+    <div id="div">
+      <img
+        src="PH01931J.JPG"
+        alt="Надпись на изображении"
+        onclick="clickImg(), alt=`привет`"
+      />
+      <h2 id="h2" onclick="clickh2()">изображение</h2>
+    </div>
+
+    <script>
+      function changeStyle() {
+        let p = document.getElementById("h1");
+        p.style.fontSize = "64px";
+        p.style.color = "blue";
+      }
+
+      function changeStyleBack() {
+        let p = document.getElementById("h1");
+        p.style.fontSize = "32px";
+        p.style.color = "black";
+      }
+
+      function clickImg() {
+        let p = document.getElementById("div");
+        p.style.background = "red";
+      }
+
+      function clickh2() {
+        let p = document.getElementById("h2");
+        p.style.color = "red";
+      }
+    </script>
+  </body>
+</html>
