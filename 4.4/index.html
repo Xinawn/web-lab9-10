@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let arr = [];
+      for (let i = 0; i < 14; i++) {
+        arr.push(Math.cos(i));
+      }
+      alert(arr.sort((a, b) => b - a));
+
+      const date = new Date();
+      const options = { month: "long", day: "numeric", hour: "numeric" };
+      alert(date.toLocaleString("en-US", options));
+      alert(Date.parse(date));
+      alert(date.getTime() / 1000);
+
+      const birthday = new Date("2002-10-04");
+      const day = birthday.getDay();
+      const dayNames = [
+        "Понедельник",
+        " Вторник",
+        " Среда",
+        " Четверг",
+        " Пятница",
+        " Суббота",
+        " Воскресенье",
+      ];
+      alert(`День рождения: ${dayNames[day - 1] + " " + day}`);
+
+      function trapezoid(a, b, h) {
+        return (a + b) * h * 0.5;
+      }
+      const a = 2;
+      const b = 3;
+      const h = 4;
+      alert("S = " + trapezoid(a, b, h));
+    </script>
+  </body>
+</html>
